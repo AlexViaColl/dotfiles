@@ -24,6 +24,9 @@ nnoremap Y y$
 
 " Plugins
 call plug#begin()
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
   " Plug 'preservim/nerdtree'
   " Plug 'tpope/vim-fugitive'  
   " Plug 'rust-lang/rust.vim'
