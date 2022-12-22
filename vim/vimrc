@@ -1,17 +1,39 @@
 " Vim configuration from 
 
+set nocompatible    " Don't use old Vi settings
+
+set noswapfile      " Disable swap file
+
 syntax on           " Syntax highlighting
 
-set number          " Show line numbers
-set nowrap	    " Don't wrap lines
+" Line numbers
+set number
+"set relativenumber
+
+" Display
+set nowrap          " Don't wrap lines
+set scrolloff=8     " Keep cursor centered vertically
+
+" Indentation
 set tabstop=4       " Show existing tab characters as 4 spaces
 set shiftwidth=4    " When indenting use 4 spaces
 set expandtab
-
-set nocompatible    " Don't use old Vi settings
 
 " Enable the mouse and make sure if works for Alacritty too!
 set mouse=a
 if $TERM == 'alacritty'
     set ttymouse=sgr
 endif
+
+" Mappings
+
+" Save on Ctrl+S
+noremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR><ESC>
+
+" Disable arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
