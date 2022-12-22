@@ -3,6 +3,7 @@
 syntax on           " Syntax highlighting
 
 set number          " Show line numbers
+set nowrap	    " Don't wrap lines
 set tabstop=4       " Show existing tab characters as 4 spaces
 set shiftwidth=4    " When indenting use 4 spaces
 set expandtab
