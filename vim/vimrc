@@ -1,0 +1,16 @@
+" Vim configuration from 
+
+syntax on           " Syntax highlighting
+
+set number          " Show line numbers
+set tabstop=4       " Show existing tab characters as 4 spaces
+set shiftwidth=4    " When indenting use 4 spaces
+set expandtab
+
+set nocompatible    " Don't use old Vi settings
+
+" Enable the mouse and make sure if works for Alacritty too!
+set mouse=a
+if $TERM == 'alacritty'
+    set ttymouse=sgr
+endif
