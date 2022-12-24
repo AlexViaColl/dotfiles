@@ -13,3 +13,6 @@ ln -sf "$SRC"/vim/vimrc "$DST"/.vim/vimrc
 
 mkdir -p "$DST"/.config/i3
 ln -sf "$SRC/i3/config" "$DST"/.config/i3/config
+
+mkdir -p "$DST"/.config/alacritty
+ln -sf "$SRC/alacritty/alacritty.yml" "$DST"/.config/alacritty/alacritty.yml
