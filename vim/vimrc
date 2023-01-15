@@ -1,6 +1,7 @@
-" Vim configuration from 
+" Vim configuration
 
 set nocompatible    " Don't use old Vi settings
+set autowrite
 
 set noswapfile      " Disable swap file
 
@@ -13,6 +14,10 @@ set number
 " Display
 set nowrap          " Don't wrap lines
 set scrolloff=8     " Keep cursor centered vertically
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " Indentation
 set tabstop=4       " Show existing tab characters as 4 spaces
