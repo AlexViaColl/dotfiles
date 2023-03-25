@@ -1,15 +1,38 @@
 " Vim configuration
 
-set nocompatible    " Don't use old Vi settings
+" Vim tips:
+" Search for a yanked word press: / Ctrl-r 0
+
+" Don't use old Vi stuff
+set nocompatible
 set autowrite
 
-set noswapfile      " Disable swap file
+" Disable swap
+set noswapfile
 
-syntax on           " Syntax highlighting
+" Syntax highlighting
+syntax on
 
-" Line numbers
-set number
-"set relativenumber
+" Theme
+colorscheme gruvbox
+set background=dark
+
+" Formatting and indentation
+filetype indent plugin on
+
+" Formatting for switch statements
+set cino=:0
+set cinoptions+=l1
+set cino+=(0,W4
+set cino+=(s,m1
+
+" Indentation
+set tabstop=4       " Show existing tab characters as 4 spaces
+set shiftwidth=4    " When indenting use 4 spaces
+set expandtab
+
+" Relative line numbers + current line
+set number relativenumber
 
 " Display
 set nowrap          " Don't wrap lines
@@ -19,10 +42,9 @@ set scrolloff=8     " Keep cursor centered vertically
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
-" Indentation
-set tabstop=4       " Show existing tab characters as 4 spaces
-set shiftwidth=4    " When indenting use 4 spaces
-set expandtab
+" Enable man page viewer (Press 'K' to open man page on cursor
+runtime ftplugin/man.vim
+set keywordprg=:Man
 
 " Enable the mouse and make sure if works for Alacritty too!
 set mouse=a
@@ -30,7 +52,16 @@ if $TERM == 'alacritty'
     set ttymouse=sgr
 endif
 
+" Set the Leader to SPACE
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+" Error format for glslangValidator
+let &errorformat = 'ERROR: %f:%l: %m,' . &errorformat
+" set errorformat+=ERROR:\ %f:%l:\ %m
+
 " Mappings
+nnoremap <Leader>m :silent make!\|redraw!\|cw<CR>
 
 " Save on Ctrl+S
 noremap <silent> <C-S> :update<CR>
