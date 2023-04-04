@@ -16,3 +16,6 @@ ln -sf "$SRC/i3/config" "$DST"/.config/i3/config
 
 mkdir -p "$DST"/.config/alacritty
 ln -sf "$SRC/alacritty/alacritty.yml" "$DST"/.config/alacritty/alacritty.yml
+
+mkdir -p "$DST"/.config/tmux
+ln -sf "$SRC"/tmux/tmux.conf" "$DST"/.config/tmux/tmux.conf
