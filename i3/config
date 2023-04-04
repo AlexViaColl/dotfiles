@@ -233,3 +233,4 @@ bindsym $mod+Control+Shift+k exec --no-startup-id /home/alex/bin/webcam_move k
 
 # Floating windows
 for_window [class="mpv"] floating enable
+for_window [class="vulkan"] floating enable
